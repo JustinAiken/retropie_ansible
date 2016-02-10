@@ -1,0 +1,15 @@
+- name: Setup udev rule
+  template:
+    dest: "/etc/udev/rules.d/10-local.rules"
+    src: 'templates/controllers/10-local.rules'
+  become: true
+
+- name: Install 8Bitdo Retroarch config
+  template:
+    src:  'templates/controllers/8BitdoSFC30GamePadJoystick.cfg'
+    dest: '/opt/retropie/configs/all/retroarch-joypads/8BitdoSFC30GamePadJoystick.cfg'
+
+- name: Install es_input.cfg
+  template:
+    src:  'templates/controllers/es_input.cfg'
+    dest: '/home/pi/.emulationstation/es_input.cfg'

@@ -1,0 +1,19 @@
+{
+  "nas": {
+    "base_path": "Base path to your roms here..."
+  },
+  "roms": {
+    "snes": {
+      "nas_rom_path": "SNES_Games (Put your own path here..)",
+      "roms": [
+        {"nas": "Some Game (U) (ENG) (!).smc", "retro": "Some Game.smc"},
+        {"nas": "Fine Game.smc",               "retro": ""}
+      ]
+    },
+    "nes": {
+      "nas_rom_path": "NES",
+      "roms": ["etc.."]
+    },
+    "etc.."
+  }
+}

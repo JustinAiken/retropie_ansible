@@ -1,0 +1,12 @@
+# Don't track downloaded BIOS files:
+files/bios/**
+!files/bios/.gitkeep
+
+# Don't track scraped data/images:
+files/gamelists/**
+!files/gamelists/.gitkeep
+files/images/**
+!files/images/.gitkeep
+
+# My roms, not yours:
+roms.json

@@ -1,0 +1,11 @@
+- name: "{{ direction }} scraped gamelist for {{ system }}"
+  synchronize:
+    mode: "{{ direction }}"
+    dest: "files/gamelists/"
+    src: "/home/pi/.emulationstation/gamelists/{{ system }}"
+
+- name: "{{ direction }} scraped images for {{ system }}"
+  synchronize:
+    mode: "{{ direction }}"
+    dest: "files/images/"
+    src: "/home/pi/.emulationstation/downloaded_images/{{ system }}"

@@ -1,0 +1,4 @@
+- name: "Install Bios"
+  copy: src={{ item }} dest='/home/pi/RetroPie/BIOS/'
+  with_fileglob:
+    - files/bios/*

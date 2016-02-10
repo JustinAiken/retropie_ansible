@@ -1,0 +1,6 @@
+- name: "Install {{ system|upper }} Roms"
+  copy:
+    src: "{{ nas.base_path }}/{{ roms[system]['nas_rom_path'] }}/{{ item.nas }}"
+    dest: "/home/pi/RetroPie/roms/{{system}}/{{ item.retro }}"
+  with_items:
+    roms[system]['roms']

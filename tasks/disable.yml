@@ -1,0 +1,11 @@
+- name: Create unused directory
+  command: mkdir -p /home/pi/RetroPie/roms/unused creates=/home/pi/RetroPie/roms/unused
+
+- name: stat {{ system }}
+  stat:
+    path: "/home/pi/RetroPie/roms/{{ system }}"
+  register: "{{ system }}_stat"
+
+- name: Move {{ system }} to unused
+  command: "mv /home/pi/RetroPie/roms/{{ system }} /home/pi/RetroPie/roms/unused/{{system}}"
+  when: "{{ system }}_stat.stat.exists"

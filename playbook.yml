@@ -1,0 +1,30 @@
+---
+# RetroPie configuration
+
+- name: RetroPie!
+  gather_facts: no
+  hosts: all
+  remote_user: pi
+
+  tasks:
+    - include: tasks/controllers.yml
+      tags: config,controllers
+
+    - include: tasks/disable.yml
+      tags: disable
+    - include: tasks/enable.yml
+      tags: enable
+
+    - name: Restart!
+      command: 'reboot'
+      become: true
+      tags: 'restart'
+
+    - include: tasks/bios.yml
+      tags: bios
+
+    - include: tasks/roms.yml
+      tags: roms
+
+    - include: tasks/scraped.yml
+      tags: scraped

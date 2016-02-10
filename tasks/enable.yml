@@ -1,0 +1,8 @@
+- name: stat {{ system }}
+  stat:
+    path: "/home/pi/RetroPie/roms/unused/{{ system }}"
+  register: "{{ system }}_unused_stat"
+
+- name: Move {{ system }} from unused
+  command: "mv /home/pi/RetroPie/roms/unused/{{ system }} /home/pi/RetroPie/roms/{{ system }}"
+  when: "{{ system }}_unused_stat.stat.exists"
