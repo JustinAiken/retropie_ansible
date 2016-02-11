@@ -1,0 +1,6 @@
+- name: "Install/Update {{ repo }}/{{ theme }} Theme"
+  git:
+    repo: "https://github.com/{{ repo }}/es-theme-{{ theme }}.git"
+    dest: "/etc/emulationstation/themes/{{ theme }}"
+    update: yes
+  become: true

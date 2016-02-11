@@ -13,6 +13,9 @@
     - include: tasks/controllers.yml
       tags: config,controllers
 
+    - include: tasks/theme.yml
+      tags: theme
+
     - include: tasks/disable.yml
       tags: disable
     - include: tasks/enable.yml

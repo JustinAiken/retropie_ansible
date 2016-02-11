@@ -1,64 +1,70 @@
-require_relative 'lib/systems.rb'
+require_relative 'lib/retro_pie.rb'
 require_relative 'lib/ansible_tool.rb'
 require_relative 'lib/get_arg.rb'
 
 namespace :pi do
   desc "Config the common bits"
   task :restart do
-    Ansible.playbook tags: ['restart']
+    Ansible.playbook 'restart'
   end
 
   desc "Config the common bits"
   task :config do
-    Ansible.playbook tags: ['config']
+    Ansible.playbook 'config'
   end
 
   desc "Set up controller config"
   task :config_controllers do
-    Ansible.playbook tags: ['controllers']
+    Ansible.playbook 'controllers'
   end
 
   desc "Update retropie-setup"
   task :update do
-    Ansible.playbook tags: ['update']
+    Ansible.playbook 'update'
+  end
+
+  desc "Install theme - provide in form of repo/theme"
+  task :theme do
+    repo, theme = get_arg.split("/")
+    Ansible.playbook 'theme', repo: repo, theme: theme
   end
 
   desc "Enables the requested system"
   task :enable do
-    Ansible.playbook sys: get_arg, tags: ['enable']
+    Ansible.playbook 'enable', system: get_arg
   end
   desc "Disables the requested system"
   task :disable do
-    Ansible.playbook sys: get_arg, tags: ['disable']
+    Ansible.playbook 'disable', system: get_arg
   end
 
   namespace :roms do
-    SYSTEMS.each do |sys|
+    RetroPie.systems.each do |sys|
       desc "Install #{sys} roms"
       task sys do
-        Ansible.playbook tags: 'roms', load_roms: true, sys: sys
+        Ansible.playbook 'roms', load_roms: true, system: sys
       end
     end
 
     desc "Install all roms for all systems"
     task :all do
-      SYSTEMS.each { |sys| Ansible.playbook tags: 'roms', load_roms: true, sys: sys }
+      RetroPie.systems.each { |sys| Ansible.playbook 'roms', load_roms: true, system: sys }
     end
   end
 
   namespace :scraped do
     %i{pull push}.each do |direction|
       namespace direction do
-        SYSTEMS.each do |sys|
+        RetroPie.systems.each do |sys|
           desc "#{direction} #{sys} gamelist/images"
           task sys do
-            Ansible.playbook tags: 'scraped', direction: direction, sys: sys
+            Ansible.playbook 'scraped', direction: direction, system: sys
           end
         end
 
         desc "#{direction} ALL gamelist/images"
         task :all do
-          SYSTEMS.each { |sys| Ansible.playbook tags: 'scraped', direction: direction, sys: sys }
+          RetroPie.systems.each { |sys| Ansible.playbook 'scraped', direction: direction, system: sys }
         end
       end
     end
@@ -67,7 +73,7 @@ namespace :pi do
   namespace :bios do
     desc "Install all bioses"
     task :install do
-      Ansible.playbook tags: ['bios']
+      Ansible.playbook 'bios'
     end
   end
 end
