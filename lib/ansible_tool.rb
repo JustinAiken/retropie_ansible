@@ -10,7 +10,9 @@ class Ansible
   end
 
   def self.playbook(tags: [], load_roms: false, direction: nil, sys: nil)
-    raise InvalidSystemError if sys && !ALL_SYSTEMS.map(&:to_s).include?(sys)
+    if sys
+      raise InvalidSystemError unless ALL_SYSTEMS.map(&:to_s).include?(sys) || ALL_SYSTEMS.include?(sys)
+    end
 
     cmd  = %Q{ANSIBLE_FORCE_COLOR=true ansible-playbook}
     cmd += %Q{ -i retropie,}
