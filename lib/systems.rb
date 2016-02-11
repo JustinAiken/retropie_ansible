@@ -3,4 +3,4 @@ ALL_SYSTEMS = %i{
   amstradcpc arcade atari5200 atari800 atarist coco dreamcast fds gb gbc intellivision mame-advmame mame-mame4all megadrive n64 nes ngpc pcengine psp quake3 sega32x sg-1000 vectrex wonderswan zmachine
 }
 
-SYSTEMS = %i{nes snes gba}
+SYSTEMS = %i{gba genesis nes sega32x snes}
