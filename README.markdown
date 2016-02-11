@@ -49,8 +49,12 @@ Various helpers to keep RetroPie easy to update.
   - Or replace snes with your choice of system
   - Or use `all` to do all at once
 
-#### Enable/disable systems
+#### Enable/disable systems in ES
 
 - `rake pi:disable snes` would hide the SNES menu item
 - `rake pi:enable snes` would unhide the SNES menu item
 - Or use `all` or other systems you want to hide
+
+#### Reboot the pi
+
+- `rake pi:restart`
