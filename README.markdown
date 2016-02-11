@@ -30,8 +30,9 @@ Various helpers to keep RetroPie easy to update.
 
 #### Config
 
-- `rake pi:config` - installs config stuff
-- `rake pi:controller_config` - installs config stuff
+- `rake pi:update` - updates RetroPie-Setup script
+- `rake pi:config` - updates/installs config stuff
+- `rake pi:controller_config` - installs controller stuff
 
 #### Install files
 

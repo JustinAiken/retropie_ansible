@@ -7,6 +7,9 @@
   remote_user: pi
 
   tasks:
+    - include: tasks/update.yml
+      tags: config,update
+
     - include: tasks/controllers.yml
       tags: config,controllers
 

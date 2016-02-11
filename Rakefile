@@ -18,6 +18,11 @@ namespace :pi do
     Ansible.playbook tags: ['controllers']
   end
 
+  desc "Update retropie-setup"
+  task :update do
+    Ansible.playbook tags: ['update']
+  end
+
   desc "Enables the requested system"
   task :enable do
     Ansible.playbook sys: get_arg, tags: ['enable']
