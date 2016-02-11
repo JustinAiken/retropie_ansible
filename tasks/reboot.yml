@@ -1,0 +1,5 @@
+- name: Restart!
+  command: 'reboot'
+  become: true
+  async: 10
+  poll: 0

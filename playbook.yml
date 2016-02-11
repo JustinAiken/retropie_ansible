@@ -15,10 +15,8 @@
     - include: tasks/enable.yml
       tags: enable
 
-    - name: Restart!
-      command: 'reboot'
-      become: true
-      tags: 'restart'
+    - include: tasks/reboot.yml
+      tags: restart
 
     - include: tasks/bios.yml
       tags: bios
