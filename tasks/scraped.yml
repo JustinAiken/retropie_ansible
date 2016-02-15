@@ -1,11 +1,23 @@
-- name: "{{ direction }} scraped gamelist for {{ system }}"
+- name: "Pull data for {{ system }} FROM the pi"
   synchronize:
-    mode: "{{ direction }}"
-    dest: "files/gamelists/"
-    src: "/home/pi/.emulationstation/gamelists/{{ system }}"
+    mode: pull
+    dest: "{{ item.local_dir }}"
+    src: "{{ item.remote_dir }}"
+    rsync_opts:
+      - "{{ item.rsync_options }}"
+  when: direction == "pull"
+  with_items:
+    - { local_dir: "files/gamelists/",         remote_dir: "/home/pi/.emulationstation/gamelists/{{ system }}",         rsync_options: '' }
+    - { local_dir: "files/images/",            remote_dir: "/home/pi/.emulationstation/downloaded_images/{{ system }}", rsync_options: '' }
+    - { local_dir: "files/saves/{{ system }}", remote_dir: "/home/pi/RetroPie/roms/{{ system }}/",                      rsync_options: "--include='*.srm' --include='*.state' --exclude='*'" }
 
-- name: "{{ direction }} scraped images for {{ system }}"
+- name: "Push data for {{ system }} TO the pi"
   synchronize:
-    mode: "{{ direction }}"
-    dest: "files/images/"
-    src: "/home/pi/.emulationstation/downloaded_images/{{ system }}"
+    mode: push
+    dest: "{{ item.remote_dir }}"
+    src:  "{{ item.local_dir }}"
+  when: direction == "push"
+  with_items:
+    - { local_dir: "files/gamelists/{{ system }}", remote_dir: "/home/pi/.emulationstation/gamelists/" }
+    - { local_dir: "files/images/{{ system }}",    remote_dir: "/home/pi/.emulationstation/downloaded_images/" }
+    - { local_dir: "files/saves/{{ system }}",     remote_dir: "/home/pi/RetroPie/roms/" }

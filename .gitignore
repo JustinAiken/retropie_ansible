@@ -2,11 +2,13 @@
 files/bios/**
 !files/bios/.gitkeep
 
-# Don't track scraped data/images:
+# Don't track scraped data/images or saved games:
 files/gamelists/**
 !files/gamelists/.gitkeep
 files/images/**
 !files/images/.gitkeep
+files/saves/**
+!files/saves/.gitkeep
 
 # My roms, not yours:
 roms.json
