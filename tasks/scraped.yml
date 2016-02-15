@@ -9,7 +9,7 @@
   with_items:
     - { local_dir: "files/gamelists/",         remote_dir: "/home/pi/.emulationstation/gamelists/{{ system }}",         rsync_options: '' }
     - { local_dir: "files/images/",            remote_dir: "/home/pi/.emulationstation/downloaded_images/{{ system }}", rsync_options: '' }
-    - { local_dir: "files/saves/{{ system }}", remote_dir: "/home/pi/RetroPie/roms/{{ system }}/",                      rsync_options: "--include='*.srm' --include='*.state' --exclude='*'" }
+    - { local_dir: "files/saves/{{ system }}", remote_dir: "/home/pi/RetroPie/roms/{{ system }}/",                      rsync_options: "--include='*.srm' --include='*.state' --include='*.sav' --exclude='*'" }
 
 - name: "Push data for {{ system }} TO the pi"
   synchronize:
