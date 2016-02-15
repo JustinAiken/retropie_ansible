@@ -67,6 +67,12 @@ Various helpers to keep RetroPie easy to update.
 
 - `rake pi:restart`
 
+#### Quit current emulator
+
+..useful if it's frozen/etc
+
+- `rake pi:quit`
+
 #### Full restore/backup
 
 - `rake pi:backup`

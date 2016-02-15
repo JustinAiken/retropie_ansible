@@ -27,6 +27,9 @@
     - include: tasks/reboot.yml
       tags: restart
 
+    - include: tasks/quit.yml
+      tags: quit
+
     - include: tasks/bios.yml
       tags: bios
 

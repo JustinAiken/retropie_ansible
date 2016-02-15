@@ -1,0 +1,4 @@
+- name: "Quit running emulator"
+  action: shell pkill -IO -f retroarch || true
+  ignore_errors: True
+  become: true

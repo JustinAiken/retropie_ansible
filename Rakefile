@@ -8,6 +8,11 @@ namespace :pi do
     Ansible.playbook 'restart'
   end
 
+  desc "Quit current emulator"
+  task :quit do
+    Ansible.playbook 'quit'
+  end
+
   namespace :config do
     desc "Update retropie-setup"
     task :update do
