@@ -57,6 +57,12 @@ Various helpers to keep RetroPie easy to update.
 - `rake pi:enable snes` would unhide the SNES menu item
 - Or use `all` or other systems you want to hide
 
+#### Themes
+
+- `rake pi:themes:install RetroPie/carbon` - Install a specific theme
+- `rake pi:themes:all` - Install ALL themes!
+- `rake pi:themes:recommended` - Install all recommended themes
+
 #### Reboot the pi
 
 - `rake pi:restart`

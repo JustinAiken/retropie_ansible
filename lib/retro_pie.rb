@@ -6,7 +6,7 @@ class RetroPie
     amstradcpc arcade atari5200 atari800 atarist coco dreamcast fds gb gbc intellivision mame-advmame mame-mame4all megadrive n64 nes ngpc pcengine psp quake3 sega32x sg-1000 vectrex wonderswan zmachine
   }
 
-  # Recommended = Carbon, Pixel, Eudora, Turtle-pi, and Canela variants
+  RECOMMENDED_THEMES = %w{carbon carbon-centered carbon-nometa pixel eudora eudora-bigshot eudora-concise turtle-pi retroplay-clean-canela retroplay-clean-detail-canela}
   THEMES = [
     {repo: 'AmadhiX',       theme: 'eudora'},
     {repo: 'AmadhiX',       theme: 'eudora-bigshot'},

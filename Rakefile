@@ -25,10 +25,25 @@ namespace :pi do
     end
   end
 
-  desc "Install theme - provide in form of repo/theme"
-  task :theme do
-    repo, theme = get_arg.split("/")
-    Ansible.playbook 'theme', repo: repo, theme: theme
+  namespace :themes do
+    desc "Install theme - provide in form of repo/theme"
+    task :install do
+      repo, theme = get_arg.split("/")
+      Ansible.playbook 'theme', repo: repo, theme: theme
+    end
+
+    desc "Install ALL THE themes!"
+    task :install do
+      RetroPie::THEMES.each { |t| Ansible.playbook 'theme', repo: t[:repo], theme: t[:theme] }
+    end
+
+    desc "Install all recommended themes"
+    task :recommended do
+      RetroPie::THEMES.each do |t|
+        next unless RetroPie::RECOMMENDED_THEMES.include?(t[:theme])
+        Ansible.playbook 'theme', repo: t[:repo], theme: t[:theme]
+      end
+    end
   end
 
   desc "Enables the requested system"
@@ -88,6 +103,7 @@ namespace :pi do
     Rake::Task["pi:roms:all"].invoke
     Rake::Task["pi:bios:install"].invoke
     Rake::Task["pi:scraped:push:all"].invoke
+    Rake::Task["pi:themes:recommended"].invoke
   end
 
   desc "Full backup"
