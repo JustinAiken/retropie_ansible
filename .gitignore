@@ -15,3 +15,6 @@ roms.json
 
 # Secrets - password/etc
 secrets.json
+
+# What systems you want to work w/
+systems.json

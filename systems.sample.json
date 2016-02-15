@@ -1,0 +1,4 @@
+{
+  "enabled":  ["gba", "megadrive", "nes", "sega32x", "snes"],
+  "disabled": ["apple2", "ports", "zmachine"]
+}

@@ -59,6 +59,10 @@ namespace :pi do
   task :disable do
     Ansible.playbook 'disable', system: get_arg
   end
+  desc "Disables all requested system"
+  task :disable_all do
+    RetroPie.explicitly_disabled.each { |sys| Ansible.playbook 'disable', system: sys }
+  end
 
   namespace :roms do
     RetroPie.systems.each do |sys|
@@ -104,7 +108,7 @@ namespace :pi do
     Rake::Task["pi:config:update"].invoke
     Rake::Task["pi:config:controllers"].invoke
     Rake::Task["pi:config:retroarch"].invoke
-    Ansible.playbook 'disable', system: :apple2
+    Rake::Task["pi:disable_all"].invoke
     Rake::Task["pi:roms:all"].invoke
     Rake::Task["pi:bios:install"].invoke
     Rake::Task["pi:scraped:push:all"].invoke

@@ -23,9 +23,10 @@ Various helpers to keep RetroPie easy to update.
 
 ### Setup Config Files
 
-- 1. `cp roms.sample.json roms.json`
-- 2. `cp secrets.sample.json secrets.json`
-- 3. Edit to taste
+- 1. `cp systems.sample.json systems.json`
+- 2. `cp roms.sample.json roms.json`
+- 3. `cp secrets.sample.json secrets.json`
+- 4. Edit to taste
 
 ## Available Tasks
 
@@ -54,8 +55,8 @@ Various helpers to keep RetroPie easy to update.
 #### Enable/disable systems in ES
 
 - `rake pi:disable snes` would hide the SNES menu item
+  - Or use `rake pi:disable_all` to disable all systems marked disabled in your systems.json
 - `rake pi:enable snes` would unhide the SNES menu item
-- Or use `all` or other systems you want to hide
 
 #### Themes
 
