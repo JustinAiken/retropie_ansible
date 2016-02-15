@@ -78,4 +78,20 @@ namespace :pi do
       Ansible.playbook 'bios'
     end
   end
+
+  desc "Full restore"
+  task :restore do
+    Rake::Task["pi:config:update"].invoke
+    Rake::Task["pi:config:controllers"].invoke
+    Rake::Task["pi:config:retroarch"].invoke
+    Ansible.playbook 'disable', system: :apple2
+    Rake::Task["pi:roms:all"].invoke
+    Rake::Task["pi:bios:install"].invoke
+    Rake::Task["pi:scraped:push:all"].invoke
+  end
+
+  desc "Full backup"
+  task :backup do
+    Rake::Task["pi:scraped:pull:all"].invoke
+  end
 end

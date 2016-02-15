@@ -60,3 +60,8 @@ Various helpers to keep RetroPie easy to update.
 #### Reboot the pi
 
 - `rake pi:restart`
+
+#### Full restore/backup
+
+- `rake pi:backup`
+- `rake pi:restore`
