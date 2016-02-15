@@ -10,3 +10,6 @@ files/images/**
 
 # My roms, not yours:
 roms.json
+
+# Secrets - password/etc
+secrets.json

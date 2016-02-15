@@ -1,0 +1,4 @@
+- name: Install retroarch config
+  template:
+    dest: "/opt/retropie/configs/all/retroarch.cfg"
+    src: 'templates/retroarch.cfg'

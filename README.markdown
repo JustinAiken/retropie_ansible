@@ -24,15 +24,16 @@ Various helpers to keep RetroPie easy to update.
 ### Setup Config Files
 
 - 1. `cp roms.sample.json roms.json`
-- 2. Edit to taste
+- 2. `cp secrets.sample.json secrets.json`
+- 3. Edit to taste
 
 ## Available Tasks
 
 #### Config
 
-- `rake pi:update` - updates RetroPie-Setup script
-- `rake pi:config` - updates/installs config stuff
-- `rake pi:controller_config` - installs controller stuff
+- `rake pi:config:update` - updates RetroPie-Setup script
+- `rake pi:config:retroarch` - updates/installs retroarch config
+- `rake pi:config:controller` - installs controller stuff
 
 #### Install files
 

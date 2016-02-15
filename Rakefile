@@ -3,24 +3,26 @@ require_relative 'lib/ansible_tool.rb'
 require_relative 'lib/get_arg.rb'
 
 namespace :pi do
-  desc "Config the common bits"
+  desc "Restart the pi"
   task :restart do
     Ansible.playbook 'restart'
   end
 
-  desc "Config the common bits"
-  task :config do
-    Ansible.playbook 'config'
-  end
+  namespace :config do
+    desc "Update retropie-setup"
+    task :update do
+      Ansible.playbook 'update'
+    end
 
-  desc "Set up controller config"
-  task :config_controllers do
-    Ansible.playbook 'controllers'
-  end
+    desc "Set up controller config"
+    task :controllers do
+      Ansible.playbook 'controllers'
+    end
 
-  desc "Update retropie-setup"
-  task :update do
-    Ansible.playbook 'update'
+    desc "Set up RetroArch config"
+    task :retroarch do
+      Ansible.playbook 'retroarch', load_secrets: true
+    end
   end
 
   desc "Install theme - provide in form of repo/theme"

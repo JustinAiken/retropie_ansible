@@ -8,10 +8,13 @@
 
   tasks:
     - include: tasks/update.yml
-      tags: config,update
+      tags: update
 
     - include: tasks/controllers.yml
-      tags: config,controllers
+      tags: controllers
+
+    - include: tasks/retroarch.yml
+      tags: retroarch
 
     - include: tasks/theme.yml
       tags: theme
