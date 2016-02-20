@@ -1,0 +1,22 @@
+# hdmi_safe=1 # uncomment if you get no picture on HDMI for a default "safe" mode
+disable_overscan=1
+
+# overscan_left=16
+# overscan_right=16
+# overscan_top=16
+# overscan_bottom=16
+# framebuffer_width=1280
+# framebuffer_height=720
+# hdmi_force_hotplug=1    # uncomment if hdmi display is not detected and composite is being output
+#hdmi_group=1
+#hdmi_mode=1
+
+dtparam=audio=on
+gpu_mem_256=128
+gpu_mem_512=256
+gpu_mem_1024=256
+overscan_scale=1
+gpu_mem_256=128
+gpu_mem_512=256
+gpu_mem_1024=256
+overscan_scale=1

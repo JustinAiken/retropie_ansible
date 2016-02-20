@@ -13,6 +13,11 @@ namespace :pi do
     Ansible.playbook 'quit'
   end
 
+  desc "Config retropie"
+  task :config do
+    Ansible.playbook 'config'
+  end
+
   namespace :config do
     desc "Update retropie-setup"
     task :update do
@@ -106,6 +111,7 @@ namespace :pi do
   desc "Full restore"
   task :restore do
     Rake::Task["pi:config:update"].invoke
+    Rake::Task["pi:config"].invoke
     Rake::Task["pi:config:controllers"].invoke
     Rake::Task["pi:config:retroarch"].invoke
     Rake::Task["pi:disable_all"].invoke

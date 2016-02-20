@@ -1,0 +1,5 @@
+- name: Install /boot/config.txt
+  template:
+    dest: "/boot/config.txt"
+    src: 'templates/config.txt'
+  become: true

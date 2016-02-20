@@ -33,6 +33,7 @@ Various helpers to keep RetroPie easy to update.
 
 #### Config
 
+- `rake pi:config` - updates `/boot/config.txt`
 - `rake pi:config:update` - updates RetroPie-Setup script
 - `rake pi:config:retroarch` - updates/installs retroarch config
 - `rake pi:config:controller` - installs controller stuff

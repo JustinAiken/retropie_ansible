@@ -10,6 +10,9 @@
     - include: tasks/update.yml
       tags: update
 
+    - include: tasks/config.yml
+      tags: config
+
     - include: tasks/controllers.yml
       tags: controllers
 
