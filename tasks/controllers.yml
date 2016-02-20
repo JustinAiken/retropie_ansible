@@ -6,8 +6,9 @@
 
 - name: Install 8Bitdo Retroarch config
   template:
-    src:  'templates/controllers/8BitdoSFC30GamePadJoystick.cfg'
-    dest: '/opt/retropie/configs/all/retroarch-joypads/8BitdoSFC30GamePadJoystick.cfg'
+    src:  "templates/controllers/{{ item }}.cfg"
+    dest: "/opt/retropie/configs/all/retroarch-joypads/{{ item }}.cfg"
+  with_items: ['8BitdoSFC30GamePadJoystick', '8BitdoSNES30GamePadJoystick']
 
 - name: Install es_input.cfg
   template:

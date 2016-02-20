@@ -6,7 +6,8 @@ Various helpers to keep RetroPie easy to update.
 
 - [Raspberry Pi 2](https://www.amazon.com/Raspberry-Pi-Model-Project-Board/dp/B00T2U7R7I/?tag=cc0a0-20)
 - [SD Card](https://www.amazon.com/SanDisk-microSDHC-Standard-Packaging-SDSQUNC-032G-GN6MA/dp/B010Q57T02/?tag=cc0a0-20)
-- [8bitdo SFC30](https://www.amazon.com/SFC30-Wireless-Bluetooth-Controller-Joystick/dp/B00Y0LUQFE/?tag=cc0a0-20)
+- [8bitdo SFC30](https://www.amazon.com/SFC30-Wireless-Bluetooth-Controller-Joystick/dp/B00Y0LUQFE/?tag=cc0a0-20) (controller 1)
+- [8bitdo SNES30](http://www.amazon.com/Wireless-Bluetooth-Controller-Classic-Joystick/dp/B00X3F0DW4/?tag=cc0a0-20) (controller 2)
 
 ## Preparation
 

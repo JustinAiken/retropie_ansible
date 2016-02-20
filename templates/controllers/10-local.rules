@@ -1,1 +1,2 @@
 SUBSYSTEM=="input", ATTRS{name}=="8Bitdo SFC30 GamePad Joystick", MODE="0666", ENV{ID_INPUT_JOYSTICK}="1"
+SUBSYSTEM=="input", ATTRS{name}=="8Bitdo SNES30 GamePad Joystick", MODE="0666", ENV{ID_INPUT_JOYSTICK}="1"
