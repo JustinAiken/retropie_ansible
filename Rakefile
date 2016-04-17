@@ -56,19 +56,6 @@ namespace :pi do
     end
   end
 
-  desc "Enables the requested system"
-  task :enable do
-    Ansible.playbook 'enable', system: get_arg
-  end
-  desc "Disables the requested system"
-  task :disable do
-    Ansible.playbook 'disable', system: get_arg
-  end
-  desc "Disables all requested system"
-  task :disable_all do
-    RetroPie.explicitly_disabled.each { |sys| Ansible.playbook 'disable', system: sys }
-  end
-
   namespace :roms do
     RetroPie.systems.each do |sys|
       desc "Install #{sys} roms"

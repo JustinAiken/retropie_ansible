@@ -35,10 +35,6 @@ class RetroPie
     {repo: 'RetroPie',      theme: 'clean-look'}
   ]
 
-  def self.explicitly_disabled
-    system_file['disabled']
-  end
-
   def self.systems
     system_file['enabled']
   end

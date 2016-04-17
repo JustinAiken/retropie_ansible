@@ -55,12 +55,6 @@ Various helpers to keep RetroPie easy to update.
   - Or replace snes with your choice of system
   - Or use `all` to do all at once
 
-#### Enable/disable systems in ES
-
-- `rake pi:disable snes` would hide the SNES menu item
-  - Or use `rake pi:disable_all` to disable all systems marked disabled in your systems.json
-- `rake pi:enable snes` would unhide the SNES menu item
-
 #### Themes
 
 - `rake pi:themes:install RetroPie/carbon` - Install a specific theme

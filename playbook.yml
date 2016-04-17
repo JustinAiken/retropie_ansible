@@ -22,11 +22,6 @@
     - include: tasks/theme.yml
       tags: theme
 
-    - include: tasks/disable.yml
-      tags: disable
-    - include: tasks/enable.yml
-      tags: enable
-
     - include: tasks/reboot.yml
       tags: restart
 
