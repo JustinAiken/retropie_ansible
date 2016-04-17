@@ -3,3 +3,9 @@
     dest: "/boot/config.txt"
     src: 'templates/config.txt'
   become: true
+
+- name: Install /etc/emulationstation/es_systems.cfg
+  template:
+    dest: "/etc/emulationstation/es_systems.cfg"
+    src: 'templates/es_systems.cfg'
+  become: true
