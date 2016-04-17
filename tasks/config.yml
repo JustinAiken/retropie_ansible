@@ -4,6 +4,12 @@
     src: 'templates/config.txt'
   become: true
 
+- name: Install /etc/wpa_supplicant/wpa_supplicant.conf
+  template:
+    dest: "/etc/wpa_supplicant/wpa_supplicant.conf"
+    src: 'templates/wpa_supplicant.conf'
+  become: true
+
 - name: Install /etc/emulationstation/es_systems.cfg
   template:
     dest: "/etc/emulationstation/es_systems.cfg"

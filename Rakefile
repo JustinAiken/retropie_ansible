@@ -15,7 +15,7 @@ namespace :pi do
 
   desc "Config retropie"
   task :config do
-    Ansible.playbook 'config'
+    Ansible.playbook 'config', load_secrets: true
   end
 
   namespace :config do
