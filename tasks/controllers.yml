@@ -8,7 +8,7 @@
   template:
     src:  "templates/controllers/{{ item }}.cfg"
     dest: "/opt/retropie/configs/all/retroarch-joypads/{{ item }}.cfg"
-  with_items: ['8BitdoSFC30GamePadJoystick', '8BitdoSNES30GamePadJoystick']
+  with_items: ['8BitdoSFC30GamePadJoystick', '8BitdoSNES30GamePadJoystick', '8BitdoNES30ProGamePadBluetoothMode', '8BitdoNES30ProGamePadBluetoothJoypadMode']
 
 - name: Install es_input.cfg
   template:
