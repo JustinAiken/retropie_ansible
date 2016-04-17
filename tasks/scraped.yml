@@ -3,6 +3,7 @@
     mode: pull
     dest: "{{ item.local_dir }}"
     src: "{{ item.remote_dir }}"
+    copy_links: yes
     rsync_opts:
       - "{{ item.rsync_options }}"
   when: direction == "pull"
@@ -16,6 +17,7 @@
     mode: push
     dest: "{{ item.remote_dir }}"
     src:  "{{ item.local_dir }}"
+    copy_links: yes
   when: direction == "push"
   with_items:
     - { local_dir: "files/gamelists/{{ system }}", remote_dir: "/home/pi/.emulationstation/gamelists/" }
